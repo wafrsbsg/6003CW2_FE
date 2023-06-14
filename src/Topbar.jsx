@@ -5,7 +5,7 @@ import axios from 'axios'
 import {Context} from "./Context"
 
 export default function TopBar() {
-  //get user data from context123
+  //get user data from context
   const {setUserData, userData} = useContext(Context)
   useEffect(() => {
     fetch('https://6003be.darwelldavid.repl.co/data', {
@@ -81,12 +81,22 @@ export default function TopBar() {
       <ul className="topList">
             <li className="topListItem">
               <Link className="link" to="/login">
-                LOGIN
+                PUBLIC LOGIN
               </Link>
             </li>
             <li className="topListItem">
               <Link className="link" to="/register">
-                REGISTER
+                PUBLIC REGISTER
+              </Link>
+            </li>
+        <li className="topListItem">
+              <Link className="link" to="/staffLogin">
+                STAFF LOGIN
+              </Link>
+            </li>
+        <li className="topListItem">
+              <Link className="link" to="/staffRegister">
+                STAFF REGISTER
               </Link>
             </li>
           </ul>

@@ -30,7 +30,7 @@ const handleRegister = async (e) => {
   return (
     <div className='d-flex justify-content-center align-items-center vh-100 registerPage'>
             <div className='bg-white p-3 rounded w-25 border'>
-                <h2>Register</h2>
+                <h2>Pubilc Register</h2>
                 <form onSubmit={handleRegister}>
                   
                     <div className='mb-3'>
