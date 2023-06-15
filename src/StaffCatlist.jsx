@@ -3,9 +3,13 @@ import './App.css'
 import axios from 'axios'
 
 //get data from Home Page
-const Catlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
-    const pleaseLogin = () => {
-    alert('Please Login')
+const StaffCatlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
+    const handleDeleteCat = () => {
+    axios.delete('https://6003be.darwelldavid.repl.co/deleteCat/' + id)
+      .then((res) => {
+        console.log(res)
+        setUpdateUI((prevState) => !prevState)
+      })
   }
 
 
@@ -16,7 +20,7 @@ const Catlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
               {catName}
               {describe}
               {imageurl}
-              <button onClick={pleaseLogin}>Like</button>
+              <button onClick={handleDeleteCat}>Delete</button>
               </li>
         </div>
         </div>
@@ -27,4 +31,4 @@ const Catlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
   
 }
 
-export default Catlist
+export default StaffCatlist

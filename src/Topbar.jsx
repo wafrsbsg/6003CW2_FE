@@ -7,12 +7,24 @@ import {Context} from "./Context"
 export default function TopBar() {
   //get user data from context
   const {setUserData, userData} = useContext(Context)
+  const {staffData,setStaffData} = useContext(Context)
+  
   useEffect(() => {
     fetch('https://6003be.darwelldavid.repl.co/data', {
        credentials: 'include',
     }).then(res => {
       res.json().then(userData => {
         setUserData(userData);
+    })
+  })
+    },[])
+
+  useEffect(() => {
+    fetch('https://6003be.darwelldavid.repl.co/data', {
+       credentials: 'include',
+    }).then(res => {
+      res.json().then(staffData => {
+        setStaffData(staffData);
     })
   })
     },[])
@@ -24,9 +36,11 @@ export default function TopBar() {
       method: 'POST',
     });
     setUserData(null)
+    setStaffData(null)
   }
 
   const email = userData?.email
+  const staffEmail = staffData?.email
 
   //Display different topbars depending on whether are logged in or not
   return (
@@ -34,7 +48,7 @@ export default function TopBar() {
       
       <div className="flex-3 display-flex align-items-center justify-content-center topCenter">
         
-        {email && (
+        {email&& (
              <ul className="topList">
           
           <li className="topListItem">
@@ -57,7 +71,26 @@ export default function TopBar() {
           
         </ul>
           )}
-        {!email && (
+
+        {staffEmail && !email && (
+             <ul className="topList">
+          
+          <li className="topListItem">
+            <Link className="link" to="/staffHome">
+              HOME
+            </Link>
+          </li>
+          
+          <li className="topListItem">
+            <Link className="link" to="">
+              STAFF
+            </Link>
+          </li>
+          
+          
+        </ul>
+          )}
+        {!email && !staffEmail && (
       <li className="topListItem">
             <Link className="link" to="/">
               HOME
@@ -70,14 +103,27 @@ export default function TopBar() {
         {email && (
       <ul className="topList">
             <li className="topListItem">
-              <a onClick={logout}>
+              <Link className="link" to="/" onClick={logout}>
                 LOGOUT ({email})
-              </a>
+              </Link>
             </li>
           </ul>
           
       )}
-        {!email && (
+
+        {staffEmail && !email && (
+      <ul className="topList">
+            <li className="topListItem">
+              <Link className="link" to="/" onClick={logout}>
+                LOGOUT ({staffEmail})
+              </Link>
+            </li>
+          </ul>
+          
+      )}
+
+        
+        {!email && !staffEmail && (
       <ul className="topList">
             <li className="topListItem">
               <Link className="link" to="/login">
