@@ -1,19 +1,21 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import axios from 'axios'
+import {Context} from "./Context"
+import {useState,useContext, useRef} from 'react'
 
 //get data from Home Page
-const StaffCatlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
+const PublicFavoritelist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
+
   //delete cat
     const handleDeleteCat = () => {
-    axios.delete('https://6003be.darwelldavid.repl.co/deleteCat/' + id)
+    axios.delete('https://6003be.darwelldavid.repl.co/deleteLikeCat/' + id)
       .then((res) => {
         console.log(res)
         alert('delete successful')
         setUpdateUI((prevState) => !prevState)
       })
   }
-
 
     return (
       <div className='justify-content-center  registerPage'>
@@ -29,8 +31,6 @@ const StaffCatlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode})
       
   )
   
-
-  
 }
 
-export default StaffCatlist
+export default PublicFavoritelist

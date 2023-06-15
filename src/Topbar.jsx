@@ -52,13 +52,13 @@ export default function TopBar() {
              <ul className="topList">
           
           <li className="topListItem">
-            <Link className="link" to="/">
+            <Link className="link" to="/publicHome">
               HOME
             </Link>
           </li>
           
           <li className="topListItem">
-            <Link className="link" to="">
+            <Link className="link" to="/publicFavorite">
               FAVORITES
             </Link>
           </li>

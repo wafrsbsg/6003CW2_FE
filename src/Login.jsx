@@ -35,7 +35,7 @@ function Login() {
    }
      
      if (red) {
-    return <Navigate to={'/'} />
+    return <Navigate to={'/publicHome'} />
   } 
   
     
