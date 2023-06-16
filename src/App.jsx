@@ -5,6 +5,7 @@ import Topbar from "./Topbar"
 import StaffLogin from './StaffLogin'
 import StaffRegister from './StaffRegister'
 import StaffHome from './StaffHome'
+import StaffHomeU from './StaffHomeU'
 import PublicHome from './PublicHome'
 import PublicFavorite from './PublicFavorite'
 
@@ -28,6 +29,7 @@ const App = () => {
         <Route path='/staffHome' element={<StaffHome />}></Route>
         <Route path='/publicHome' element={<PublicHome />}></Route>
         <Route path='/publicFavorite' element={<PublicFavorite />}></Route>
+        <Route path='/staffHomeU' element={<StaffHomeU />}></Route>
         </Routes>
         </ContextProvider>
   </BrowserRouter>

@@ -5,7 +5,7 @@ import {Context} from "./Context"
 import {useState,useContext, useRef} from 'react'
 
 //get data from Home Page
-const PublicFavoritelist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
+const PublicFavoritelist = ({id,catName,describe,imageurl,setUpdateUI}) => {
 
   //delete cat
     const handleDeleteCat = () => {

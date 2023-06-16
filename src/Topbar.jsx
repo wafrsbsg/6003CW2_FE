@@ -8,6 +8,16 @@ export default function TopBar() {
   //get user data from context
   const {setUserData, userData} = useContext(Context)
   const {staffData,setStaffData} = useContext(Context)
+
+  useEffect(() => {
+    fetch('https://6003be.darwelldavid.repl.co/data', {
+       credentials: 'include',
+    }).then(res => {
+      res.json().then(staffData => {
+        setStaffData(staffData);
+    })
+  })
+    },[])
   
   useEffect(() => {
     fetch('https://6003be.darwelldavid.repl.co/data', {
@@ -19,15 +29,7 @@ export default function TopBar() {
   })
     },[])
 
-  useEffect(() => {
-    fetch('https://6003be.darwelldavid.repl.co/data', {
-       credentials: 'include',
-    }).then(res => {
-      res.json().then(staffData => {
-        setStaffData(staffData);
-    })
-  })
-    },[])
+  
 
   //logout
   function logout() {
@@ -48,6 +50,33 @@ export default function TopBar() {
       
       <div className="flex-3 display-flex align-items-center justify-content-center topCenter">
         
+        
+
+        {staffEmail && !email && (
+             <ul className="topList">
+          
+          <li className="topListItem">
+            <Link className="link" to="/staffHome">
+              CREATE & DELETE CAT
+            </Link>
+          </li>
+
+               <li className="topListItem">
+            <Link className="link" to="/staffHomeU">
+              UPDATE CAT
+            </Link>
+          </li>
+          
+          <li className="topListItem">
+            <Link className="link" to="">
+              STAFF
+            </Link>
+          </li>
+          
+          
+        </ul>
+          )}
+
         {email&& (
              <ul className="topList">
           
@@ -68,25 +97,6 @@ export default function TopBar() {
               CONTACT US
             </Link>
           </li>
-          
-        </ul>
-          )}
-
-        {staffEmail && !email && (
-             <ul className="topList">
-          
-          <li className="topListItem">
-            <Link className="link" to="/staffHome">
-              HOME
-            </Link>
-          </li>
-          
-          <li className="topListItem">
-            <Link className="link" to="">
-              STAFF
-            </Link>
-          </li>
-          
           
         </ul>
           )}

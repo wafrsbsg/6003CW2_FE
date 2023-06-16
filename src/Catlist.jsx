@@ -3,7 +3,7 @@ import './App.css'
 import axios from 'axios'
 
 //get data from Home Page
-const Catlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
+const Catlist = ({id,catName,describe,imageurl,setUpdateUI}) => {
     const pleaseLogin = () => {
     alert('Please Login')
   }

@@ -3,16 +3,8 @@ import './App.css'
 import axios from 'axios'
 
 //get data from Home Page
-const StaffCatlist = ({id,catName,describe,imageurl,setUpdateUI}) => {
-  //delete cat
-    const handleDeleteCat = () => {
-    axios.delete('https://6003be.darwelldavid.repl.co/deleteCat/' + id)
-      .then((res) => {
-        console.log(res)
-        alert('delete successful')
-        setUpdateUI((prevState) => !prevState)
-      })
-  }
+const StaffCatlistU = ({id,catName,describe,imageurl,setUpdateUI,showUpdateText}) => {
+    
 
  
 
@@ -23,7 +15,7 @@ const StaffCatlist = ({id,catName,describe,imageurl,setUpdateUI}) => {
               {catName}
               {describe}
               {imageurl}
-              <button onClick={handleDeleteCat}>Delete</button>
+              <button onClick={() => showUpdateText(id, catName, describe, imageurl)}>Update</button>
               </li>
         </div>
         </div>
@@ -34,4 +26,4 @@ const StaffCatlist = ({id,catName,describe,imageurl,setUpdateUI}) => {
   
 }
 
-export default StaffCatlist
+export default StaffCatlistU

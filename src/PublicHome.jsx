@@ -7,7 +7,6 @@ import { useEffect, useState } from 'react'
 
 function  PublicHome() {
   const[cats, setCat] = useState([])
-  const[updateUI, setUpdateUI] = useState(false)
 
 
   //set cat data
@@ -17,7 +16,7 @@ function  PublicHome() {
       console.log(res.data)
         setCat(res.data)
       })
-  },[updateUI])
+  },[])
 
   return (
       
@@ -32,7 +31,6 @@ function  PublicHome() {
                            catName={cat.catName}
                            describe={cat.describe}
                            imageurl={cat.imageurl}
-                           setUpdateUI={setUpdateUI}
                            /> 
                           ))}
                 </ul>

@@ -5,7 +5,7 @@ import {Context} from "./Context"
 import {useState,useContext, useRef} from 'react'
 
 //get data from PubilcHome Page
-const PublicCatlist = ({key,id,catName,describe,imageurl,setUpdateUI,updateMode}) => {
+const PublicCatlist = ({id,catName,describe,imageurl}) => {
 
   //Send the displayed cat list and the current user's email to the backend
   const {userData} = useContext(Context)
