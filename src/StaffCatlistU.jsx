@@ -14,7 +14,7 @@ const StaffCatlistU = ({id,catName,describe,imageurl,setUpdateUI,showUpdateText}
             <li className='bg-white '>
               {catName}
               {describe}
-              {imageurl}
+              <img src={'https://6003be.darwelldavid.repl.co/images/' + imageurl}/>
               <button onClick={() => showUpdateText(id, catName, describe, imageurl)}>Update</button>
               </li>
         </div>

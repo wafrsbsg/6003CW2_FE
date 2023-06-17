@@ -15,7 +15,7 @@ const Catlist = ({id,catName,describe,imageurl,setUpdateUI}) => {
             <li className='bg-white '>
               {catName}
               {describe}
-              {imageurl}
+              <img src={'https://6003be.darwelldavid.repl.co/images/' + imageurl}/>
               <button onClick={pleaseLogin}>Like</button>
               </li>
         </div>

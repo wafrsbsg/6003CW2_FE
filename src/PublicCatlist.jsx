@@ -35,7 +35,7 @@ const PublicCatlist = ({id,catName,describe,imageurl}) => {
             <li className='bg-white '>
               {catName}
               {describe}
-              {imageurl}
+              <img src={'https://6003be.darwelldavid.repl.co/images/' + imageurl}/>
               <button onClick={handleLike}>Like</button>
               </li>
         </div>

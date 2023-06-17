@@ -11,21 +11,35 @@ function StaffHome() {
   const [imageurl, setImageurl] = useState('')
   const[cats, setCat] = useState([])
   const[updateUI, setUpdateUI] = useState(false)
+  const text = 'text'
 
   //save cat and refresh the page when new cats are saved
   const handleSaveCat = async (e) => {
     e.preventDefault();
+    const formdata = new FormData()
+    formdata.append('file',imageurl)
     try {
-      const res = await axios.post("https://6003be.darwelldavid.repl.co/saveCat", {
-        catName,
-        describe,
-        imageurl,
-      });
+      const res = await axios.post("https://6003be.darwelldavid.repl.co/saveCat" + catName + "/"+ describe ,formdata)
+      
       setUpdateUI((prevState) => !prevState)
+      console.log(res)
+      //console.log(imageurl)
     } catch (err) {
-      setError(true);
+      setError(true)
     }
-  };
+  }
+
+  const handleUpload = async (e) => {
+    e.preventDefault();
+    const formdata = new FormData()
+    formdata.append('imageurl',imageurl)
+    try{
+    await axios.post("https://6003be.darwelldavid.repl.co/saveCat", formdata)
+    }catch(err){
+      console.log(err)
+    }
+  }
+
 
 
   
@@ -58,11 +72,10 @@ function StaffHome() {
                         <input type="text" placeholder='Enter Cat Name' name='name'  className='form-control rounded-0' onChange={(e) => setDescribe(e.target.value)}/>
                     </div>
                   
-                    <div className='mb-3'>
+<div className='mb-3'>
                         <label htmlFor="file"><strong>Cat Image</strong></label>
-                        <input type="text" placeholder='Enter Cat Image' name='name'  className='form-control rounded-0' onChange={(e) => setImageurl(e.target.value)}/>
+                        <input type="file"  name='image'  className='form-control rounded-0' onChange={(e) => setImageurl(e.target.files[0])} />
                     </div>
-
 
 
 
@@ -70,7 +83,6 @@ function StaffHome() {
                   
                     <button type='submit' className='btn btn-success w-100 rounded-0'> Submit</button>
                 </form>
-
 
               <ul>
                 {cats.map((cat => 

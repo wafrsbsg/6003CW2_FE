@@ -16,12 +16,10 @@ const [id, setId] = useState(null)
 
    const handleUpdateCat = async (e) => {
      e.preventDefault();
+     const formdata = new FormData()
+    formdata.append('file',imageurl)
      try {
-    const res = await axios.put('https://6003be.darwelldavid.repl.co/updateCat/' + id, {
-      catName,
-        describe,
-        imageurl,
-    })
+    const res = await axios.put('https://6003be.darwelldavid.repl.co/updateCat/' + id + "/"+ catName + "/"+ describe ,formdata)
       setUpdateUI((prevState) => !prevState)
     } catch (err) {
       setError(true);
@@ -39,11 +37,10 @@ const [id, setId] = useState(null)
   },[updateUI])
 
   //Help set the text of the selected cat data into the textbox
-  const showUpdateText = (id, nameText, describeText, imageurlText) => {
+  const showUpdateText = (id, nameText, describeText) => {
     console.log(id)
     setCatName(nameText)
     setDescribe(describeText)
-    setImageurl(imageurlText)
     setId(id)
   }
 
@@ -67,9 +64,9 @@ const [id, setId] = useState(null)
                         <input type="text" placeholder='Enter Cat Name' name='name'  value={describe}className='form-control rounded-0' onChange={(e) => setDescribe(e.target.value)}/>
                     </div>
                   
-                    <div className='mb-3'>
+<div className='mb-3'>
                         <label htmlFor="file"><strong>Cat Image</strong></label>
-                        <input type="text" placeholder='Enter Cat Image' name='name' value={imageurl} className='form-control rounded-0' onChange={(e) => setImageurl(e.target.value)}/>
+                        <input type="file"  name='image'  className='form-control rounded-0' onChange={(e) => setImageurl(e.target.files[0])} />
                     </div>
 
 

@@ -8,6 +8,7 @@ import StaffHome from './StaffHome'
 import StaffHomeU from './StaffHomeU'
 import PublicHome from './PublicHome'
 import PublicFavorite from './PublicFavorite'
+import Test from './Test'
 
 import {ContextProvider} from "./Context"
 
@@ -30,6 +31,7 @@ const App = () => {
         <Route path='/publicHome' element={<PublicHome />}></Route>
         <Route path='/publicFavorite' element={<PublicFavorite />}></Route>
         <Route path='/staffHomeU' element={<StaffHomeU />}></Route>
+        <Route path='/test' element={<Test />}></Route>
         </Routes>
         </ContextProvider>
   </BrowserRouter>
