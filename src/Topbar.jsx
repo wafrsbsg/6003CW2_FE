@@ -68,8 +68,8 @@ export default function TopBar() {
           </li>
           
           <li className="topListItem">
-            <Link className="link" to="">
-              STAFF
+            <Link className="link" to="/staffMessage">
+              MANAGE MESSAGE
             </Link>
           </li>
           
@@ -93,7 +93,7 @@ export default function TopBar() {
           </li>
           
           <li className="topListItem">
-            <Link className="link" to="">
+            <Link className="link" to="/publicMessage">
               CONTACT US
             </Link>
           </li>
