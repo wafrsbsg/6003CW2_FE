@@ -12,6 +12,7 @@ function StaffHome() {
   const[cats, setCat] = useState([])
   const[updateUI, setUpdateUI] = useState(false)
   const text = 'text'
+  const[search, setSearch] = useState('')
 
   //save cat and refresh the page when new cats are saved
   const handleSaveCat = async (e) => {
@@ -52,12 +53,16 @@ function StaffHome() {
       })
   },[updateUI])
 
+      //use filter to search cat
+const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search))
+
   return (
       <div>
 
 
 
               <h2>Add New Cat or Delete Cat</h2>
+        <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
                 <form onSubmit={handleSaveCat}>
 
                   <div className='mb-3'>
@@ -85,7 +90,7 @@ function StaffHome() {
                 </form>
 
               <ul>
-                {cats.map((cat => 
+                {searchedCats.map((cat => 
                          <StaffCatlist 
                            key={cat._id}
                            id={cat._id}

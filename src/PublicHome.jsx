@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react'
 
 function  PublicHome() {
   const[cats, setCat] = useState([])
+  const[search, setSearch] = useState('')
+  
 
 
   //set cat data
@@ -18,13 +20,21 @@ function  PublicHome() {
       })
   },[])
 
+  //use filter to search cat
+const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search))
+
+  //console.log('cats',cats)
+  console.log('searchedCats',searchedCats)
+  
   return (
+    <div>
+    <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
       
               
 
 
               <ul>
-                {cats.map((cat => 
+                {searchedCats.map((cat => 
                          <PublicCatlist 
                            key={cat._id}
                            id={cat._id}
@@ -34,6 +44,7 @@ function  PublicHome() {
                            /> 
                           ))}
                 </ul>
+      </div>
 
     
   )

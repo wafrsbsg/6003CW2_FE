@@ -12,6 +12,7 @@ function StaffHomeU() {
   const[cats, setCat] = useState([])
   const[updateUI, setUpdateUI] = useState(false)
 const [id, setId] = useState(null)
+  const[search, setSearch] = useState('')
 
 
    const handleUpdateCat = async (e) => {
@@ -44,12 +45,16 @@ const [id, setId] = useState(null)
     setId(id)
   }
 
+  //use filter to search cat
+const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search))
+
   return (
       <div>
 
 
 
               <h2>Update Cat</h2>
+        <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
                 <form onSubmit={handleUpdateCat}>
 
                   <div className='mb-3'>
@@ -79,7 +84,7 @@ const [id, setId] = useState(null)
 
 
               <ul>
-                {cats.map((cat => 
+                {searchedCats.map((cat => 
                          <StaffCatlistU 
                            key={cat._id}
                            id={cat._id}

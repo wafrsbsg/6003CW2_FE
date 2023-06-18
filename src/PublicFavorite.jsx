@@ -11,6 +11,7 @@ function PublicFavorite() {
   const [updateUI, setUpdateUI] = useState(false)
   const { userData } = useContext(Context)
   const userEmail = userData.email
+  const[search, setSearch] = useState('')
 
   //After get the current user's email and sending it to the backend, get the current user's favorite list from the backend based on the email
   useEffect(() => {
@@ -21,9 +22,14 @@ function PublicFavorite() {
       })
   }, [updateUI])
 
+  //use filter to search cat
+const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search))
+
   return (
+    <div>
+    <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
     <ul>
-      {cats.map((cat =>
+      {searchedCats.map((cat =>
         <PublicFavoritelist
           key={cat._id}
           id={cat._id}
@@ -34,6 +40,7 @@ function PublicFavorite() {
         />
       ))}
     </ul>
+      </div>
 
 
   )
