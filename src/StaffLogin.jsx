@@ -30,7 +30,8 @@ function StaffLogin() {
         setStaffData(staffData)
         
       })
-        
+    }else{
+      alert('wrong email or password')
     }
    }
      
@@ -48,13 +49,13 @@ function StaffLogin() {
                   
                     <div className='mb-3'>
                         <label htmlFor="email"><strong>Email</strong></label>
-                        <input type="email"  placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)}/>
+                        <input type="email"  placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)} required/>
                     </div>
                   
                     <div className='mb-3'>
                         <label htmlFor="password"><strong>Password</strong></label>
                         <input type="password" placeholder='Enter Password' name='password'  
-                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)}/>
+                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)} required/>
                     </div>
 
 

@@ -10,6 +10,7 @@ function StaffRegister() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [name, setName] = useState('')
+  const [registerCode, setRegisterCode] = useState('')
 
   //handle Register
 
@@ -20,11 +21,14 @@ const handleRegister = async (e) => {
         name,
         email,
         password,
-      });
+        registerCode,
+      })
+      alert('register success')
     } catch (err) {
-      setError(true);
+      alert('email has been used or register code is incorrect!')
     }
-  };
+  }
+
 
     
   return (
@@ -35,25 +39,32 @@ const handleRegister = async (e) => {
                   
                     <div className='mb-3'>
                         <label htmlFor="email"><strong>Email</strong></label>
-                        <input type="email" placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)}/>
+                        <input type="email" placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)} required/>
                     </div>
                   
                     <div className='mb-3'>
                         <label htmlFor="password"><strong>Password</strong></label>
                         <input type="password" placeholder='Enter Password' name='password'
-                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)}/>
+                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)} required/>
                     </div>
 
 <div className='mb-3'>
                         <label htmlFor="name"><strong>Name</strong></label>
                         <input type="text" placeholder='Enter Name' name='name'
-                           className='form-control rounded-0' onChange={(e) => setName(e.target.value)}/>
+                           className='form-control rounded-0' onChange={(e) => setName(e.target.value)} required/>
+                    </div>
+                  
+                  <div className='mb-3'>
+                        <label htmlFor="name"><strong>Register Code</strong></label>
+                        <input type="text" placeholder='Enter Code' name='name'
+                           className='form-control rounded-0'  onChange={(e) => setRegisterCode(e.target.value)} required/>
                     </div>
 
 
 
                   
                     <button type='submit' className='btn btn-success w-100 rounded-0'> Submit</button>
+                  <br/>
                   <Link to="/staffLogin" className=' btn btn-success w-100 rounded-0'>Go To Login</Link>
                 </form>
             </div>

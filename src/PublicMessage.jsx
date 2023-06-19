@@ -40,25 +40,23 @@ const saveEmail = userData.email
 
 
   return (
-      <div>
-
-
-
-              <h2>Send Message</h2>
+      <div className='registerPage'>
+      <br/>
+      <h1><b>Send Us Message</b></h1>
+    <br/>
                 <form onSubmit={handleSendMessage}>
 
-                  <div className='mb-3'>
-                        <label htmlFor="name"><strong>Message</strong></label>
                         <input type="text" placeholder='Enter Message' name='name'
-                           className='form-control rounded-0' onChange={(e) => setMessage(e.target.value)}/>
-  
-                    </div>
-                
+                           className='form-control rounded search' onChange={(e) => setMessage(e.target.value)} required/>
+  <br/>
                   
-                    <button type='submit' className='btn btn-success w-100 rounded-0'> Send</button>
+                    <button type='submit' className='btn btn-success  rounded bigButton'> Send</button>
                 </form>
 
-
+<br/>
+        <hr></hr>
+        <br/>
+        <div className="m-auto">
               <ul>
                 {messages.map((message1 => 
                          <PublicMessagelist 
@@ -70,6 +68,7 @@ const saveEmail = userData.email
                            /> 
                           ))}
                 </ul>
+          </div>
               </div>
 
     

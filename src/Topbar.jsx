@@ -48,11 +48,12 @@ export default function TopBar() {
   return (
     <div className="topBar">
       
-      <div className="flex-3 display-flex align-items-center justify-content-center topCenter">
+      
         
         
-
+<div className="topLeft">
         {staffEmail && !email && (
+      
              <ul className="topList">
           
           <li className="topListItem">
@@ -77,7 +78,8 @@ export default function TopBar() {
         </ul>
           )}
 
-        {email&& (
+        {email&& !staffEmail&& (
+      
              <ul className="topList">
           
           <li className="topListItem">
@@ -101,13 +103,16 @@ export default function TopBar() {
         </ul>
           )}
         {!email && !staffEmail && (
+      <ul className="topList">
       <li className="topListItem">
             <Link className="link" to="/">
               HOME
             </Link>
           </li>
+        </ul>
         )}
-       
+  </div>
+       <div className="topCenter">
       </div>
       <div className="topRight">
         {email && (
@@ -118,7 +123,6 @@ export default function TopBar() {
               </Link>
             </li>
           </ul>
-          
       )}
 
         {staffEmail && !email && (
@@ -157,7 +161,6 @@ export default function TopBar() {
             </li>
           </ul>
       )}
-        <i className="topSearchIcon fas fa-search"></i>
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ function Home() {
       
               
 
-
+<div className='registerPage'>
               <ul>
                 {cats.map((cat => 
                          <Catlist 
@@ -36,7 +36,7 @@ function Home() {
                            /> 
                           ))}
                 </ul>
-
+</div>
     
   )
 }

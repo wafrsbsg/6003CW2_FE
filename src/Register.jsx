@@ -14,17 +14,18 @@ function Register() {
   //handle Register
 
 const handleRegister = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       const res = await axios.post("https://6003be.darwelldavid.repl.co/register", {
         name,
         email,
         password,
-      });
+      })
+      alert('register success')
     } catch (err) {
-      setError(true);
+      alert('email has been used!')
     }
-  };
+  }
 
     
   return (
@@ -35,19 +36,19 @@ const handleRegister = async (e) => {
                   
                     <div className='mb-3'>
                         <label htmlFor="email"><strong>Email</strong></label>
-                        <input type="email" placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)}/>
+                        <input type="email" placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)} required/>
                     </div>
                   
                     <div className='mb-3'>
                         <label htmlFor="password"><strong>Password</strong></label>
                         <input type="password" placeholder='Enter Password' name='password'
-                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)}/>
+                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)} required/>
                     </div>
 
 <div className='mb-3'>
                         <label htmlFor="name"><strong>Name</strong></label>
                         <input type="text" placeholder='Enter Name' name='name'
-                           className='form-control rounded-0' onChange={(e) => setName(e.target.value)}/>
+                           className='form-control rounded-0' onChange={(e) => setName(e.target.value)} required/>
                     </div>
 
 

@@ -17,26 +17,26 @@ function Login() {
   //handle Login
    async function handleLogin(e) {
     e.preventDefault();
-    const response = await fetch('https://6003be.darwelldavid.repl.co/login', {
+    const res = await fetch('https://6003be.darwelldavid.repl.co/login', {
       method: 'POST',
       body: JSON.stringify({email, password}),
       headers: {'Content-Type':'application/json'},
       credentials: 'include',
     });
-    if (response.ok) {
+    if (res.ok) {
      // get user data from context
       setRed(true)
-      response.json().then(userData => {
+      res.json().then(userData => {
         setUserData(userData)
-        
       })
-        
+    }else {
+      alert('wrong email or password')
     }
    }
      
      if (red) {
     return <Navigate to={'/publicHome'} />
-  } 
+  }  
   
     
   
@@ -48,13 +48,13 @@ function Login() {
                   
                     <div className='mb-3'>
                         <label htmlFor="email"><strong>Email</strong></label>
-                        <input type="email"  placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)}/>
+                        <input type="email"  placeholder='Enter Email' name='email'  className='form-control rounded-0' onChange={(e) => setEmail(e.target.value)} required/>
                     </div>
                   
                     <div className='mb-3'>
                         <label htmlFor="password"><strong>Password</strong></label>
                         <input type="password" placeholder='Enter Password' name='password'  
-                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)}/>
+                           className='form-control rounded-0' onChange={(e) => setPassword(e.target.value)} required/>
                     </div>
 
 

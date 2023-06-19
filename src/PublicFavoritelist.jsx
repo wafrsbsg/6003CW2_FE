@@ -6,6 +6,7 @@ import {useState,useContext, useRef} from 'react'
 
 //get data from Home Page
 const PublicFavoritelist = ({id,catName,describe,imageurl,setUpdateUI}) => {
+  
 
   //delete cat
     const handleDeleteCat = () => {
@@ -18,15 +19,15 @@ const PublicFavoritelist = ({id,catName,describe,imageurl,setUpdateUI}) => {
   }
 
     return (
-      <div className='justify-content-center  registerPage'>
-            <div className='bg-white p-3 rounded w-25 border'>
-            <li className='bg-white '>
-              {catName}
-              {describe}
-              <img src={'https://6003be.darwelldavid.repl.co/images/' + imageurl}/>
-              <button onClick={handleDeleteCat}>Delete</button>
+      <div className='bg-white p-2 h-100 rounded w-25 border m-2 list'>
+            <li className='li'>
+              <img src={'https://6003be.darwelldavid.repl.co/images/' + imageurl} className='image'/>
+              <b>Cat Name:</b><br/> {catName}
+              <br/>
+              <b>Describe:</b><br/> {describe}
+              <br/>
+              <button onClick={handleDeleteCat}  className='btn btn-success button'>Delete</button>
               </li>
-        </div>
         </div>
       
   )

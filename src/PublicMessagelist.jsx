@@ -9,14 +9,13 @@ const PublicMessagelist = ({id,senderEmail,message,imageurl,setUpdateUI}) => {
 
 
     return (
-      <div className='justify-content-center  registerPage'>
-            <div className='bg-white p-3 rounded w-25 border'>
-            <li className='bg-white '>
-              {senderEmail}
+              <div className='bg-white p-2 h-100 rounded w-25 border m-2'>
+            <li className='li'>
+              <b>Sender:</b><br/> {senderEmail}
               <br/>
-              {message}
+              <b>Message:</b><br/> {message}
+              <br/>
               </li>
-        </div>
         </div>
       
   )

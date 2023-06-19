@@ -50,33 +50,37 @@ const searchedMessages = messages.filter(message=>message.saveEmail.toLowerCase(
 
 
   return (
-      <div>
-
-
-
-              <h2>Send Message</h2>
-        <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
+      <div className='registerPage'>
+      <br/>
+      <h1><b>Reply Message</b></h1>
+    <br/>
                 <form onSubmit={handleSendMessage}>
 
                   <div className='mb-3'>
                         <label htmlFor="name"><strong>Message</strong></label>
                         <input type="text" placeholder='Enter Message' name='name'
-                           className='form-control rounded-0' onChange={(e) => setMessage(e.target.value)}/>
+                           className='form-control rounded-0' onChange={(e) => setMessage(e.target.value)} required/>
   
                     </div>
 
                   <div className='mb-3'>
                         <label htmlFor="name"><strong>Reply to</strong></label>
                         <input type="text" placeholder='Enter Message' name='name' value={saveEmail}
-                          className='form-control rounded-0' onChange={(e) => setSaveEmail(e.target.value)}/>
+                          className='form-control rounded-0' onChange={(e) => setSaveEmail(e.target.value)} required/>
   
                     </div>
                 
                   
                     <button type='submit' className='btn btn-success w-100 rounded-0'> Send</button>
                 </form>
+        <br/>
+        <hr></hr>
+        <br/>
 
+                          <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
 
+<br/>
+        <br/>
               <ul>
                 {searchedMessages.map((message1 => 
                          <StaffMessagelist 

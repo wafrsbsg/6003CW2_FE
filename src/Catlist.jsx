@@ -10,15 +10,16 @@ const Catlist = ({id,catName,describe,imageurl,setUpdateUI}) => {
 
 
     return (
-      <div className='justify-content-center  registerPage'>
-            <div className='bg-white p-3 rounded w-25 border'>
-            <li className='bg-white '>
-              {catName}
-              {describe}
-              <img src={'https://6003be.darwelldavid.repl.co/images/' + imageurl}/>
-              <button onClick={pleaseLogin}>Like</button>
+      
+            <div className='bg-white p-2 h-100 rounded w-25 border m-2 list'>
+            <li className='li'>
+              <img src={'https://6003be.darwelldavid.repl.co/images/' + imageurl} className='image'/>
+              <b>Cat Name:</b><br/> {catName}
+              <br/>
+              <b>Describe:</b><br/> {describe}
+              <br/>
+              <button onClick={pleaseLogin} className='btn btn-success button'>Like</button>
               </li>
-        </div>
         </div>
       
   )

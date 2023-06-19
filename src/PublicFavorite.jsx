@@ -26,8 +26,13 @@ function PublicFavorite() {
 const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search))
 
   return (
-    <div>
-    <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
+    <div className='registerPage'>
+      <br/>
+      <h1><b>Your Favorite Cat</b></h1>
+    <br/>
+        <input type="text" placeholder='Search...' className='form-control rounded search' onChange={(e) => setSearch(e.target.value)} />
+                    
+              <br/>
     <ul>
       {searchedCats.map((cat =>
         <PublicFavoritelist

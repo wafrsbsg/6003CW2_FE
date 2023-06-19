@@ -3,7 +3,9 @@
 }
 
 .registerPage {
-  background: url('public/background.jpg')
+  background: url('public/background.jpg');
+  width: 100%;
+  height:100%;
 }
 
 .homePage {
@@ -12,24 +14,31 @@
 
 .topBar {
   width: 100%;
-  height: 50px;
-  background-color: white;
+  height: 60px;
+  
+  background-color: #F8D981;
   position: sticky;
   top: 0;
   display: flex;
   align-items: center;
 }
 
-.topLeft,
+.topLeft{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .topRight {
-  flex: 6;
+  flex: 10;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .topCenter {
-  flex: 6;
+  
+  flex: 5;
+
 }
 
 .topList {
@@ -38,11 +47,56 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  
 }
 
 .topListItem {
   margin-right: 20px;
-  font-size: 18px;
-  font-weight: 300;
+  font-size: 25px;
+  list-style:none;
+  font-weight: 100%;
   cursor: pointer;
+}
+
+.image{
+  width: 100%;
+    height: 100%;
+}
+
+.li{
+  background-color: white;
+  list-style:none;
+  font-size: 20px;
+}
+
+.list{
+  display:inline-block;
+}
+
+.button{
+  float: right;
+}
+
+a{
+text-decoration:none;
+color:black;
+  
+}
+
+.search{
+  font-size: 20px;
+  width: 100%;
+  border-color: black;
+}
+
+.bigButton{
+  width: 100%;
+}
+
+.borderColor{
+  border-color: black;
+}
+
+.listM{
+  height:230px;
 }

@@ -19,19 +19,19 @@ const StaffMessagelist = ({id,senderEmail,message,saveEmail,setUpdateUI,showText
   }
   
     return (
-      <div className='justify-content-center  registerPage'>
-            <div className='bg-white p-3 rounded w-25 border'>
-            <li className='bg-white '>
-              Sender: {senderEmail}
+      <div className='bg-white p-2  rounded w-25 border m-2 listM'>
+            <li className='li'>
+              <b>Sender:</b><br/> {senderEmail}
               <br/>
-              Message: {message}
+              <b>Message:</b><br/> {message}
               <br/>
-              Communicating users: {saveEmail}
+              <b>Communicating users:</b><br/> {saveEmail}
               <br/>
-              <button onClick={() => showText(saveEmail)}>Reply</button>
-              <button onClick={handleDeleteMessage}>Delete</button>
+              
+              <button onClick={() => showText(saveEmail)} className='btn btn-success button'>Reply</button>
+              
+              <button onClick={handleDeleteMessage} className='btn btn-success button'>Delete</button>
               </li>
-        </div>
         </div>
       
   )

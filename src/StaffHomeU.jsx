@@ -49,31 +49,34 @@ const [id, setId] = useState(null)
 const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search))
 
   return (
-      <div>
+<div className="registerPage">
+<br/>
 
 
+              <h1><b>Update Cat</b></h1>
+        
 
-              <h2>Update Cat</h2>
-        <input type="text" placeholder='Search...' className='search' onChange={(e) => setSearch(e.target.value)}/>
+        
                 <form onSubmit={handleUpdateCat}>
+
+                  <br/>
 
                   <div className='mb-3'>
                         <label htmlFor="name"><strong>Cat Name</strong></label>
-                        <input type="text" placeholder='Enter Cat Name' name='name' value={catName}
-                           className='form-control rounded-0' onChange={(e) => setCatName(e.target.value)}/>
+                        <input type="text" placeholder='Choose Cat' name='name' value={catName}
+                           className='form-control rounded-0' onChange={(e) => setCatName(e.target.value)} required />
   
                     </div>
                   
                     <div className='mb-3'>
                         <label htmlFor="name"><strong>Cat Describe</strong></label>
-                        <input type="text" placeholder='Enter Cat Name' name='name'  value={describe}className='form-control rounded-0' onChange={(e) => setDescribe(e.target.value)}/>
+                        <input type="text" placeholder='Enter Cat Describe' name='name'  value={describe}className='form-control rounded-0' onChange={(e) => setDescribe(e.target.value)} required/>
                     </div>
                   
 <div className='mb-3'>
                         <label htmlFor="file"><strong>Cat Image</strong></label>
-                        <input type="file"  name='image'  className='form-control rounded-0' onChange={(e) => setImageurl(e.target.files[0])} />
+                        <input type="file"  name='image'  className='form-control rounded-0' onChange={(e) => setImageurl(e.target.files[0])} required/>
                     </div>
-
 
 
 
@@ -81,7 +84,15 @@ const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search)
                   
                     <button type='submit' className='btn btn-success w-100 rounded-0'> Submit</button>
                 </form>
-
+              <br/>
+              <hr/>
+              <br/>
+              <div className='mb-3'>
+                
+        <input type="text" placeholder='Search...' className='rounded search' onChange={(e) => setSearch(e.target.value)}/>
+                </div>
+        <br/>
+        <br/>
 
               <ul>
                 {searchedCats.map((cat => 
@@ -97,6 +108,8 @@ const searchedCats = cats.filter(cat=>cat.catName.toLowerCase().includes(search)
                           ))}
                 </ul>
               </div>
+
+
 
     
   )
