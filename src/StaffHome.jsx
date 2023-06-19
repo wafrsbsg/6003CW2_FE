@@ -16,7 +16,7 @@ function StaffHome() {
 
   //save cat and refresh the page when new cats are saved
   const handleSaveCat = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     const formdata = new FormData()
     formdata.append('file',imageurl)
     try {

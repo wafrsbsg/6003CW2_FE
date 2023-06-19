@@ -14,7 +14,7 @@ export default function TopBar() {
        credentials: 'include',
     }).then(res => {
       res.json().then(staffData => {
-        setStaffData(staffData);
+        setStaffData(staffData)
     })
   })
     },[])
@@ -24,7 +24,7 @@ export default function TopBar() {
        credentials: 'include',
     }).then(res => {
       res.json().then(userData => {
-        setUserData(userData);
+        setUserData(userData)
     })
   })
     },[])

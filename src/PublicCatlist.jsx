@@ -25,7 +25,7 @@ const PublicCatlist = ({id,catName,describe,imageurl}) => {
   }
     } catch (err) {
       alert('cat has been liked!')
-      console.log(err);
+      console.log(err)
     }
   }
 

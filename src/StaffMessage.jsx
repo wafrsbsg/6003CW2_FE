@@ -16,7 +16,7 @@ function StaffMessage() {
 
 
    const handleSendMessage = async (e) => {
-     e.preventDefault();
+     e.preventDefault()
      try {
     const res = await axios.post("https://6003be.darwelldavid.repl.co/sendMessageS", {
         message,
@@ -25,7 +25,7 @@ function StaffMessage() {
       })
       setUpdateUI((prevState) => !prevState)
     } catch (err) {
-      setError(true);
+      setError(true)
     }
   }
 

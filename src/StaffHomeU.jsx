@@ -16,14 +16,14 @@ const [id, setId] = useState(null)
 
 
    const handleUpdateCat = async (e) => {
-     e.preventDefault();
+     e.preventDefault()
      const formdata = new FormData()
     formdata.append('file',imageurl)
      try {
     const res = await axios.put('https://6003be.darwelldavid.repl.co/updateCat/' + id + "/"+ catName + "/"+ describe ,formdata)
       setUpdateUI((prevState) => !prevState)
     } catch (err) {
-      setError(true);
+      setError(true)
     }
   }
 

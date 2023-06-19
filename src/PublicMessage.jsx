@@ -15,7 +15,7 @@ function PublicMessage() {
 const saveEmail = userData.email
 
    const handleSendMessage = async (e) => {
-     e.preventDefault();
+     e.preventDefault()
      try {
     const res = await axios.post("https://6003be.darwelldavid.repl.co/sendMessage", {
         message,
@@ -23,7 +23,7 @@ const saveEmail = userData.email
       })
       setUpdateUI((prevState) => !prevState)
     } catch (err) {
-      setError(true);
+      setError(true)
     }
   }
 
