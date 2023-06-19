@@ -9,5 +9,5 @@ export function ContextProvider({children}) {
     <Context.Provider value={{userData,setUserData,staffData,setStaffData}}>
       {children}
     </Context.Provider>
-  );
+  )
 }

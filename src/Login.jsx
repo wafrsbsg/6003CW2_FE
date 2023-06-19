@@ -16,7 +16,7 @@ function Login() {
 
   //handle Login
    async function handleLogin(e) {
-    e.preventDefault();
+    e.preventDefault()
     const res = await fetch('https://6003be.darwelldavid.repl.co/login', {
       method: 'POST',
       body: JSON.stringify({email, password}),

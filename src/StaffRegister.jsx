@@ -15,7 +15,7 @@ function StaffRegister() {
   //handle Register
 
 const handleRegister = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
       const res = await axios.post("https://6003be.darwelldavid.repl.co/staffRegister", {
         name,

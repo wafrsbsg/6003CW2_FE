@@ -16,7 +16,7 @@ function StaffLogin() {
 
   //handle Login
    async function handleLogin(e) {
-    e.preventDefault();
+    e.preventDefault()
     const response = await fetch('https://6003be.darwelldavid.repl.co/staffLogin', {
       method: 'POST',
       body: JSON.stringify({email, password}),
