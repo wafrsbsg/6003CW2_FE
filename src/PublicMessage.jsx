@@ -17,7 +17,7 @@ const saveEmail = userData.email
    const handleSendMessage = async (e) => {
      e.preventDefault()
      try {
-    const res = await axios.post("https://6003be.darwelldavid.repl.co/sendMessage", {
+    const res = await axios.post("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/sendMessage", {
         message,
       senderEmail,
       })
@@ -30,7 +30,7 @@ const saveEmail = userData.email
   
   //set message data
   useEffect(() => {
-    axios.get("https://6003be.darwelldavid.repl.co/showMessage/" + saveEmail)
+    axios.get("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/showMessage/" + saveEmail)
       .then((res) => {
         console.log(saveEmail)
       console.log(res.data)

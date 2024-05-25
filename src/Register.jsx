@@ -16,7 +16,7 @@ function Register() {
 const handleRegister = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post("https://6003be.darwelldavid.repl.co/register", {
+      const res = await axios.post("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/register", {
         name,
         email,
         password,

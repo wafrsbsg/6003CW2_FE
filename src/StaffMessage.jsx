@@ -18,7 +18,7 @@ function StaffMessage() {
    const handleSendMessage = async (e) => {
      e.preventDefault()
      try {
-    const res = await axios.post("https://6003be.darwelldavid.repl.co/sendMessageS", {
+    const res = await axios.post("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/sendMessageS", {
         message,
       senderEmail,
       saveEmail,
@@ -32,7 +32,7 @@ function StaffMessage() {
   
   //set message data
   useEffect(() => {
-    axios.get("https://6003be.darwelldavid.repl.co/showMessageS")
+    axios.get("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/showMessageS")
       .then((res) => {
       console.log(res.data)
         setMessages(res.data)

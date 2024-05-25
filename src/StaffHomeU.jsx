@@ -20,7 +20,7 @@ const [id, setId] = useState(null)
      const formdata = new FormData()
     formdata.append('file',imageurl)
      try {
-    const res = await axios.put('https://6003be.darwelldavid.repl.co/updateCat/' + id + "/"+ catName + "/"+ describe ,formdata)
+    const res = await axios.put('https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/updateCat/' + id + "/"+ catName + "/"+ describe ,formdata)
       setUpdateUI((prevState) => !prevState)
     } catch (err) {
       setError(true)
@@ -30,7 +30,7 @@ const [id, setId] = useState(null)
   
   //set cat data
   useEffect(() => {
-    axios.get("https://6003be.darwelldavid.repl.co/showCat")
+    axios.get("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/showCat")
       .then((res) => {
       console.log(res.data)
         setCat(res.data)

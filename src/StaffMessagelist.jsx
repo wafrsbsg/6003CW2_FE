@@ -10,7 +10,7 @@ const StaffMessagelist = ({id,senderEmail,message,saveEmail,setUpdateUI,showText
 
 //delete message
     const handleDeleteMessage = () => {
-    axios.delete('https://6003be.darwelldavid.repl.co/deleteMessage/' + id)
+    axios.delete('https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/deleteMessage/' + id)
       .then((res) => {
         console.log(res)
         alert('delete successful')

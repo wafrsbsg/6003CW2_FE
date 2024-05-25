@@ -20,7 +20,7 @@ function StaffHome() {
     const formdata = new FormData()
     formdata.append('file',imageurl)
     try {
-      const res = await axios.post("https://6003be.darwelldavid.repl.co/saveCat" + catName + "/"+ describe ,formdata)
+      const res = await axios.post("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/saveCat" + catName + "/"+ describe ,formdata)
       
       setUpdateUI((prevState) => !prevState)
       console.log(res)
@@ -35,7 +35,7 @@ function StaffHome() {
     const formdata = new FormData()
     formdata.append('imageurl',imageurl)
     try{
-    await axios.post("https://6003be.darwelldavid.repl.co/saveCat", formdata)
+    await axios.post("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/saveCat", formdata)
     }catch(err){
       console.log(err)
     }
@@ -46,7 +46,7 @@ function StaffHome() {
   
   //set cat data
   useEffect(() => {
-    axios.get("https://6003be.darwelldavid.repl.co/showCat")
+    axios.get("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/showCat")
       .then((res) => {
       console.log(res.data)
         setCat(res.data)

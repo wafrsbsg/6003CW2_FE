@@ -13,7 +13,7 @@ function  PublicHome() {
 
   //set cat data
   useEffect(() => {
-    axios.get("https://6003be.darwelldavid.repl.co/showCat")
+    axios.get("https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/showCat")
       .then((res) => {
       console.log(res.data)
         setCat(res.data)

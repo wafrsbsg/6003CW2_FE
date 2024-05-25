@@ -10,7 +10,7 @@ export default function TopBar() {
   const {staffData,setStaffData} = useContext(Context)
 
   useEffect(() => {
-    fetch('https://6003be.darwelldavid.repl.co/data', {
+    fetch('https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/data', {
        credentials: 'include',
     }).then(res => {
       res.json().then(staffData => {
@@ -20,7 +20,7 @@ export default function TopBar() {
     },[])
   
   useEffect(() => {
-    fetch('https://6003be.darwelldavid.repl.co/data', {
+    fetch('https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/data', {
        credentials: 'include',
     }).then(res => {
       res.json().then(userData => {
@@ -33,7 +33,7 @@ export default function TopBar() {
 
   //logout
   function logout() {
-    fetch('https://6003be.darwelldavid.repl.co/logout', {
+    fetch('https://ec014493-d2d7-4fa2-95fc-04a64c4aa7b4-00-clzutjej6qos.spock.replit.dev/logout', {
       credentials: 'include',
       method: 'POST',
     });
